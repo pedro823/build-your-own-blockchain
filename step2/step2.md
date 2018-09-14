@@ -37,8 +37,8 @@ class Block:
 
     def __init__(self, data, previous_hash):
         self.data = str(data)
-        self.hash = self.calculate_hash()
         self.previous_hash = previous_hash # little change here
+        self.hash = self.calculate_hash()
 
     def is_valid(self):
         return self.data is not None and self.hash == self.calculate_hash()
@@ -46,6 +46,7 @@ class Block:
     def calculate_hash(self):
         h = hashlib.sha256()
         h.update(bytes(self.data, 'utf8'))
+        h.update(bytes(self.previous_hash, 'ascii')) # Also considers it in the hash
         return h.hexdigest()
 
 ```
@@ -121,6 +122,7 @@ class Block:
     def calculate_hash(self):
         h = hashlib.sha256()
         h.update(bytes(self.data, 'utf8'))
+        h.update(bytes(self.previous_hash, 'ascii'))
         return h.hexdigest()
 
 ```
@@ -152,6 +154,7 @@ class Blockchain:
         if not isinstance(block, Block):
             raise Exception('add_block: must be a block')
         block.previous_hash = self.blockchain[-1].hash # Sets previous hash
+        block.hash = block.calculate_hash() # Hash must be recalculated
         self.blockchain.append(block)
 ```
 

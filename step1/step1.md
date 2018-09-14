@@ -26,7 +26,7 @@ class Block:
         self.data = str(data)
 
     def is_valid(self):
-        return self.data is not None
+        return self.data is not None # Always True
 
 ```
 
