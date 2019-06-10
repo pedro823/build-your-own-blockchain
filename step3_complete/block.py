@@ -3,22 +3,24 @@ import hashlib
 class Block:
     ''' Will hold a block of data and its validation. '''
 
-    def __init__(self, data, difficulty, previous_hash=''): # ADDED: difficulty
+    def __init__(self, data, difficulty: int, previous_hash=''):
         self.data = str(data)
-        self.hash = self.calculate_hash()
         self.difficulty = difficulty
         self.previous_hash = previous_hash
-        self.nonce = 0 # nonce := Number used once
+        self.nonce = 0
 
-    def is_valid(self):
-        # is_valid checks if hash starts with
-        return self.data is not None \
-               and self.hash == self.calculate_hash() \
-               and self.hash.startswith('0' * self.difficulty, beg=0)
-
-    def calculate_hash(self):
+    @property
+    def hash(self):
         h = hashlib.sha256()
-        h.update()
         h.update(bytes(self.data, 'utf8'))
         h.update(bytes(self.previous_hash, 'ascii'))
+        h.update(bytes(str(self.nonce), 'ascii'))
         return h.hexdigest()
+
+    def is_valid(self):
+        return self.data is not None \
+               and self.hash.startswith('0' * self.difficulty)
+
+    def mine(self):
+        while not self.is_valid():
+            self.nonce += 1
