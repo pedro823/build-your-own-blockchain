@@ -16,7 +16,7 @@ a new database just by learning SQL and relations.
 ### How to read this tutorial
 
 Read it in order from the first folder. The folders with names 
-"_complete" have the completed code of the lesson.
+**"_complete"** have the completed code of the lesson.
 If you'd like to learn just a section of the blockchain, 
 you could just grab all the completed code from the step before,
 but be warned: I highly suggest you start from the beggining, 
@@ -24,12 +24,12 @@ so that you understand fully what you're doing.
 
 ### Progress
 
-Create block & blockchain - DONE
-Add hashing function - DONE
-Add link to previous block - DONE
-Add mining and Proof of Work - DONE
-Add difficulty generation
-Add wallets & wallet generation
-Add the concept of a transaction
-Store & retrieve the blockchain on disk
-Add blockchain synchronization between peers
+- Create block & blockchain - DONE
+- Add hashing function - DONE
+- Add link to previous block - DONE
+- Add mining and Proof of Work - DONE
+- Add difficulty generation
+- Add wallets & wallet generation
+- Add the concept of a transaction
+- Store & retrieve the blockchain on disk
+- Add blockchain synchronization between peers
