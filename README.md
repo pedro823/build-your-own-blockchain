@@ -27,7 +27,7 @@ so that you understand fully what you're doing.
 Create block & blockchain - DONE
 Add hashing function - DONE
 Add link to previous block - DONE
-Add mining and Proof of Work
+Add mining and Proof of Work - DONE
 Add difficulty generation
 Add wallets & wallet generation
 Add the concept of a transaction
