@@ -7,7 +7,7 @@ class Transaction:
         self.amount = amount
 
     def __repr__(self):
-        return f'transaction from={self.from_address} to={self.to_address} amount={self.amount}'
+        return f'<Transaction from={self.from_address} to={self.to_address} amount={self.amount}>'
 
 class Block:
     ''' Will hold a block of data and its validation. '''
@@ -35,4 +35,4 @@ class Block:
             self.nonce += 1
 
     def __repr__(self):
-        return f'Block transactions={self.transactions} hash={self.hash[-6:]} nonce={self.nonce}'
+        return f'<Block transactions={self.transactions} hash={self.hash[-6:]} nonce={self.nonce}>'
