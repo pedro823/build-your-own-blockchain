@@ -28,8 +28,8 @@ so that you understand fully what you're doing.
 - Add hashing function - DONE
 - Add link to previous block - DONE
 - Add mining and Proof of Work - DONE
+- Add the concept of a transaction - DONE
 - Add difficulty generation
 - Add wallets & wallet generation
-- Add the concept of a transaction
 - Store & retrieve the blockchain on disk
 - Add blockchain synchronization between peers
